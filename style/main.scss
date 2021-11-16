@@ -1,6 +1,9 @@
+@import './base/fonts';
+
 p {
-  span{
-    color: red;
-    display: block;
-  }
+  color: blue;
+}
+
+* {
+  font-family: 'Noto Sans KR', sans-serif;
 }
