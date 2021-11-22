@@ -1,0 +1,32 @@
+// mixin과의 차이점
+// - @mixin은 어디 에서나 재사용이 가능하고, 호출 시 해당 속성들을 그대로 붙여넣기 식으로 사용되지만
+// - placeholde (%_) 는 유사한 요소들을 모아서 같은 속성들을 같이 사용하고, 다른 속성들은 각자 사용되는 방식이다.
+
+%tag-base {
+  // ★ 공통 스타일 ★
+  @include inline-flexbox;
+  @include text-style(12);
+  height: 20px;
+  padding: 0 6px;
+  font-weight: 700;
+  border-radius: 4px;
+}
+
+.tag-red {
+  @extend %tag-base;
+  color: $white;
+  background-color: $red;
+}
+
+.tag-green {
+  @extend %tag-base;
+  color: $white;
+  background-color: $green;
+}
+
+.tag-gray {
+  @extend %tag-base;
+  color: $secondary;
+  background-color: $border;
+  
+}
