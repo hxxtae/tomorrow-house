@@ -5,8 +5,12 @@
 @import './base/normalize';
 @import './base/reset';
 
+@import './mixins/text-style';
+
 @import './layouts/grids';
+
 
 //$hongsi: 1;
 // - property 의 value는 전부 변수(상수) 안에 넣을 수 있다.
 // - scss에는 스코프가 존재하기 때문에 전역변수와 지역변수의 유효범위가 존재한다.
+
