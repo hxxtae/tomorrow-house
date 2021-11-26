@@ -77,16 +77,27 @@
                     <strong class="badge">15</strong>
                   </a>
 
-                  <button class="gnb-avatar-button sm-hidden" type="button" aria-label="마이메뉴 열기 버튼">
-                    <div class='avatar-32'>
-                      <img src="./assets/images/img-user-01.jpg" alt="사달라 아저씨">
-                    </div>
-                  </button>
+                  <div class="my-menu sm-hidden">
+                    <button class="my-menu-button" type="button" aria-label="마이메뉴 열기 버튼">
+                      <div class='avatar-32'>
+                        <img src="./assets/images/img-user-01.jpg" alt="사달라 아저씨">
+                      </div>
+                    </button>
   
-                  <div class="gnb-auth sm-hidden">
-                    <a href="/">로그인</a>
-                    <a href="/">회원가입</a>
+                    <div class="my-menu-content">
+                      <ul class="my-menu-list">
+                        <li class="my-menu-item">
+                          <button type="button">마이페이지</button></li>
+                        <li class="my-menu-item">
+                          <button type="button">나의 쇼핑</button></li>
+                        <li class="my-menu-item">
+                          <button type="button">이벤트</button></li>
+                        <li class="my-menu-item">
+                          <button type="button">로그아웃</button></li>
+                      </ul>
+                    </div>
                   </div>
+
                 </div>
 
                 <!-- NOTE : 로그인을 하지 않은 경우 -->
