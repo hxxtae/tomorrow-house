@@ -88,11 +88,33 @@
   }
 
   @include responsive(D) {
-    &-right {
-      .input-group {
-        width: 264px;
-        margin-right: 24px;
+    &-search {
+      position: relative;
+      width: 264px;
+      margin-right: 24px;
+
+      .search-history {
+        position: absolute;
+        top: calc(100% + 8px); // ★★★ calc()는 서로 다른 기호끼리의 연산을 가능하게 해준다. (top: 100% 는 부모의 height 크기이다.)
+        left: 0;
+        display: none;
+        width: 100%;
+        padding: 16px 8px 8px;
+        background-color: $white;
+        border: 1px solid $border;
+        border-radius: 4px;
+        box-shadow: $dropdown-shadow;
+
+        &-header {
+          padding: 0 8px;
+        }
+
+        &.is-active {
+          display: block;
+        }
       }
+
     }
+    
   }
 }
