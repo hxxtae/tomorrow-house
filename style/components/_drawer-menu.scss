@@ -1,5 +1,5 @@
 $drawer-menu-item-height: 36px;
-$drawer-menu-list-padding: 8px;
+$drawer-menu-list-padding: 20px;
 $communuty-length: 9;
 $store-length: 9;
 $expert-length: 4;
@@ -42,7 +42,7 @@ $expert-length: 4;
     }
 
     .drawer-menu-list {
-      padding-bottom: 8px;
+      padding-bottom: $drawer-menu-list-padding;
     }
   }
 
