@@ -1,0 +1,112 @@
+$drawer-menu-item-height: 36px;
+$drawer-menu-list-padding: 8px;
+$communuty-length: 9;
+$store-length: 9;
+$expert-length: 4;
+
+@function _calculate-max-content-height($length) {
+  @return $drawer-menu-item-height * $length + $drawer-menu-list-padding;
+}
+
+.drawer-menu {
+  &.is-active {
+    .drawer-menu-button {
+      color: $blue;
+    }
+  }
+
+  &.is-open {
+    &.is-community {
+      .drawer-menu-content {
+        //display: block;
+        max-height: _calculate-max-content-height($communuty-length);
+      }
+    }
+
+    &.is-store {
+      .drawer-menu-content {
+        //display: block;
+        max-height: _calculate-max-content-height($store-length);
+      }
+    }
+
+    &.is-expert {
+      .drawer-menu-content {
+        //display: block;
+        max-height: _calculate-max-content-height($expert-length);
+      }
+    }
+
+    .drawer-menu-button i:last-child {
+      transform: translateY(-50%) rotate(180deg); // ★★★ 기존 transform이 덮어 지므로 2개 동시 선언
+    }
+
+    .drawer-menu-list {
+      padding-bottom: 8px;
+    }
+  }
+
+  &-button {
+    @include flexbox(start);
+    @include text-style(18, $primary);
+    position: relative;
+    width: 100%;
+    height: 54px;
+    padding: 0 8px;
+    font-weight: 700;
+    transition: color 200ms ease-in-out;
+
+    i {
+      &:first-child {
+        position: relative; // TODO Check
+        top: 1px; // TODO Check
+        margin-right: 8px;
+        font-size: 24px;
+        color: $primary;
+      }
+
+      &:last-child {
+        @include pos-center-y;
+        right: 0;
+        font-size: 16px;
+        color: $primary;
+        transition: transform 200ms ease-in-out;
+      }
+    }
+
+  }
+
+  &-content {
+    // ※ display 로는 transition의 처리가 불가능
+    //display: none;
+
+    // ※ display -> max-height 로 사용  ★★★
+    //    (부드러운 효과를 위해서는 list들의 정확한 갯수와 size를 잰 max-height 값이 필요)
+    //    (list의 갯수의 변화가 없으면 고정값, 변화가 있다면 javascript 로 변동값 지정)
+    max-height: 0px;
+    overflow: hidden;
+    transition: max-height 200ms ease-in-out;
+  }
+
+  &-item {
+    &.is-active {
+      a {
+        color: $blue;
+      }
+    }
+
+    a {
+      @include flexbox(start);
+      @include text-style(14, $primary);
+      width: 100%;
+      height: 36px;
+      padding: 0 12px;
+      font-weight: 700;
+    }
+
+    .ic-new {
+      font-size: 16px;
+      color: $red;
+    }
+  }
+}
