@@ -6,4 +6,12 @@
   width: 100%;
   height: 100vh;
   background-color: rgba($primary, 0.5);
+  opacity: 0;
+  transition: opacity 300ms ease-in-out;
+  visibility: hidden; // ★★★ 시각적으로 존재하지 않는 상태 (display: none 과 혼동 주의 - document 요소의 존재 유무가 차이)
+
+  &.is-active {
+    opacity: 1;
+    visibility: visible; // ★★★ 시각적으로 존재하는 상태
+  }
 }
