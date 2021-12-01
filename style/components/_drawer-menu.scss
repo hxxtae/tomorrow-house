@@ -1,14 +1,14 @@
-$drawer-menu-item-height: 36px;
-$drawer-menu-list-padding: 20px;
-$communuty-length: 9;
-$store-length: 9;
-$expert-length: 4;
-
-@function _calculate-max-content-height($length) {
-  @return $drawer-menu-item-height * $length + $drawer-menu-list-padding;
-}
-
 .drawer-menu {
+  $drawer-menu-item-height: 36px;
+  $drawer-menu-list-padding: 20px;
+  $communuty-length: 9;
+  $store-length: 9;
+  $expert-length: 4;
+  
+  @function _calculate-max-content-height($length) {
+    @return $drawer-menu-item-height * $length + $drawer-menu-list-padding;
+  }
+
   &.is-active {
     .drawer-menu-button {
       color: $blue;
@@ -106,7 +106,6 @@ $expert-length: 4;
 
     .ic-new {
       font-size: 16px;
-      color: $red;
     }
   }
 }
