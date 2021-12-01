@@ -4,9 +4,7 @@
   overflow-x: auto; // 기준 스크롤
   
 
-  &::-webkit-scrollbar {
-    display: none;
-  }
+  @include no-scrollbar;
 
   &-list {
     // ※ 스크롤안 요소의 갯수에 딱맞는 전체 width 크기를 지정하는 첫번째 방법 (block 성질 활용)
