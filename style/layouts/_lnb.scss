@@ -1,0 +1,105 @@
+.lnb {
+  overflow-x: auto; // 기준 스크롤
+  border-bottom: 1px solid $border;
+
+  &::-webkit-scrollbar {
+    display: none;
+  }
+
+  &-list {
+    // ※ 스크롤안 딱맞는 전체 width 크기를 지정하는 첫번째 방법 (block 성질 활용)
+    // @include flexbox(start);
+    //width: max-content; // ★★★
+    // 안될 시 호환의 이슈가 있다.
+
+    // 기존의 100%는 부모의 크기의 100% 이지만
+    // max-content 는 자식의 content의 갯수에 따른 최대 크기를 반환한다.
+
+    // max-content 와 min-content 는
+    // 자신이 가지고 있는 자손의 사이즈가
+    // 특정 값으로 고정되지 않았을 때 의미있게 사용 가능하다는 것!
+
+
+    // ※ 스크롤안 딱맞는 전체 width 크기를 지정하는 두번째 방법 (inline 성질 활용)
+    @include inline-flexbox(start); // ★★★
+    white-space: nowrap;
+    
+
+    position: relative;
+    left: -8px;
+  }
+
+  &-item {
+    // 첫 번째 방법 적용 시
+    // flex-shrink: 0;
+
+    &.is-active {
+      a {
+        color: $blue;
+        border-bottom: 2px solid $blue;
+      }
+    }
+
+    a {
+      @include inline-flexbox;
+      @include text-style(13, $dark);
+      padding: 0 8px;
+      height: 40px;
+      font-weight: 700;
+    }
+
+    .ic-new {
+      color: $red;
+    }
+  }
+}
+
+
+/*--------------------------*/
+/* 내가 만든 lnb scss style */
+/*--------------------------*/
+// .lnb {
+//   $left-size: $sm-margin + ($gutter / 2);
+//   border-bottom: 1px solid $border;
+
+//   &-list {
+//     @include flexbox(start);
+//     position: relative;
+//     left: -#{$left-size};
+//     width: calc(100% + (#{$left-size} * 2));
+//     padding-left: 7px;
+//     white-space: nowrap; // ★★★ x축 scroll 만들 시 필요한 속성
+//     overflow-x: auto;
+    
+//     &::-webkit-scrollbar {
+//       display: none;
+//     }
+//   }
+
+//   &-item {
+//     @include inline-flexbox; // 가능하면 white space 사용한다면 inline 요소로
+//     position: relative;
+
+//     &.is-active {
+//       &::before {
+//         @include pos-center-x;
+//         bottom: 0;
+//         display: block;
+//         width: 100%;
+//         border-bottom: 2px solid $blue;
+//         content: '';
+//       }
+
+//       a {
+//         color: $blue;
+//       }
+//     }
+
+//     a {
+//       @include text-style(13, $dark);
+//       padding: 10px 8px;
+//       font-weight: 700;
+//     }
+//   }
+// }
+
