@@ -1,15 +1,16 @@
 .gnb {
   position: relative;
+  background-color: $white;
   border-bottom: 1px solid $border;
 
   &-wrapper {
     @include flexbox(between);
+    height: $gnb-height-sm - 1px;
   }
 
   &-right {
     .gnb-button-group {
       @include flexbox(end);
-      height: 50px;
     }
 
     .gnb-icon-button.is-search {
@@ -31,6 +32,10 @@
   }
 
   @include responsive(T) {
+    &-wrapper {
+      height: $gnb-height-md - 1px;
+    }
+
     &-left {
       @include flexbox(start);
     }
@@ -62,10 +67,6 @@
           }
         }
       }
-    }
-
-    &-wrapper {
-      height: 80px;
     }
 
     .logo {
