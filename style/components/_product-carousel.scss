@@ -2,7 +2,7 @@
   $grid-margin: 15px;
 
   position: relative;
-  
+
   &-slider {
     margin: 0 -#{$grid-margin}; // ★★★ 원리 이해 (지정된 크기가 없는 요소는 margin이 정수면 크기가 줄고 음수면 크기가 늘어난다.)
   }
@@ -47,5 +47,56 @@
     display: block;  // ★★★ img는 default로 inline이라는 점 주의!!
     width: 100%;
     height: auto;
+  }
+
+  @include responsive(T) {
+    padding-right: 30px;
+
+    &-slider {
+      margin: 0 0 8px 0;
+      overflow: hidden;
+      border-radius: 4px;
+    }
+
+    &-thumbnail {
+      position: static;
+      transform: none;
+    }
+
+    .thumbnail-list {
+      justify-content: start;
+    }
+
+    .thumbnail-item {
+      margin: 0 8px 0 0;
+
+      &:last-child {
+        margin-right: 0;
+      }
+
+      &.tns-nav-active {
+        button {
+          border: 2px solid $blue;
+          transform: none;
+        }
+      }
+
+      button {
+        @include flexbox;
+        width: 56px;
+        height: 56px;
+        overflow: hidden;
+        border-radius: 4px;
+        opacity: 1;
+      }
+
+      img {
+        display: block;
+        width: 56px;  
+        height: 56px;
+        // ★★★ button 의 border 때문에 크기가 작아져 img에 사이즈를 주면 button 영역을 약간 삐저나오는데
+        //       다시 가운데로 정렬하려면 flex로 button의 content 영역에 존재하는 img 를 가운데로 정렬해 주면 된다.
+      }
+    }
   }
 }
