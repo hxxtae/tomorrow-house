@@ -70,10 +70,6 @@
     .thumbnail-item {
       margin: 0 8px 0 0;
 
-      &:last-child {
-        margin-right: 0;
-      }
-
       &.tns-nav-active {
         button {
           border: 2px solid $blue;
@@ -96,6 +92,37 @@
         height: 56px;
         // ★★★ button 의 border 때문에 크기가 작아져 img에 사이즈를 주면 button 영역을 약간 삐저나오는데
         //       다시 가운데로 정렬하려면 flex로 button의 content 영역에 존재하는 img 를 가운데로 정렬해 주면 된다.
+      }
+    }
+  }
+
+  @include responsive(D) {
+    @include flexbox(end, start);
+    flex-direction: row-reverse;
+    // justify-content: flex-end;
+    // align-items: flex-start;
+
+    &-slider {
+      width: 500px;
+      height: 500px;
+    }
+
+    &-thumbnail {
+      margin-right: 8px;
+    }
+
+    .thumbnail-list {
+      flex-direction: column;      
+    }
+
+    .thumbnail-item {
+      margin-right: 0;
+      margin-bottom: 8px; 
+
+      button,
+      img {
+        width: 75px;
+        height: 75px;
       }
     }
   }
