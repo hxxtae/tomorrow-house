@@ -40,4 +40,28 @@
       margin-left: 4px;
     }
   }
+
+  @include responsive(T) {
+    background-color: $background;
+    height: 54px;
+    border-bottom: none;
+
+    &-item {
+      button {
+        @include text-style(16);
+        height: 54px;
+      }
+    }
+
+    .bedge {
+      margin-left: 8px;
+    }
+  }
+
+  @include responsive(D) {
+    &-item button:hover {
+      color: $blue;
+
+    }
+  }
 }
