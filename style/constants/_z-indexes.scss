@@ -1,6 +1,26 @@
+$product-tab-level: 30;
 $lnb-level: 40;
 $gnb-level: 50;
 
 $overlay-level: 100;
 $sidebar-level: 200;
 $search-modal-level: 300;
+
+/*  
+  z-index를 적용하려면 두가지 경우로 나누어서 생각해야 한다.
+
+  1. position 이 static인 요소들의 z-index 
+    (default: position: static, 선언하지 않아도 static)
+
+  2. position 이 static 이 아닌 요소들의 z-index
+
+  ※ 한 요소는 1번, 다른 요소는 2번인 경우
+  -> 1번의 경우 아무리 z-index를 10000000 을 주어도 2번의 요소 보다 뒤쪽으로 위치하게 된다.
+
+  ※ 두 요소가 2번인 경우
+  -> 비교 핧 두 요소의 position이 선언된 부모 요소를 찾아 태그 작성 위치를 비교해야 한다.
+    B 부모 요소가 A요소 보다 나중에 선언되어 있다면 B 요소가 보다 앞쪽에 위치하며, z-index로 조정이 가능하다.
+  -> 두 요소가 부모와 자식인 경우에는 z-index로 위치를 변경할 수 없다.
+
+    
+*/
