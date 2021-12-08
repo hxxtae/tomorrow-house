@@ -46,6 +46,10 @@
     height: 54px;
     border-bottom: none;
 
+    &-list {
+      margin: 0;
+    }
+
     &-item {
       button {
         @include text-style(16);
@@ -61,7 +65,6 @@
   @include responsive(D) {
     &-item button:hover {
       color: $blue;
-
     }
   }
 }
