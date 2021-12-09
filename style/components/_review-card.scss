@@ -1,0 +1,94 @@
+.review-card {
+  padding: 20px 0;
+  
+  &-header {
+    @include flexbox(start);
+    margin-bottom: 20px;
+
+    .avatar-24,
+    .username {
+      &:active {
+        opacity: 0.4;
+      }
+    }
+
+    .avatar-24 {
+      margin-right: 8px;
+    }
+
+    .username {
+      @include text-style(13, $primary); // ★★★ inline 안에 inline은 부모 text-style의 영향을 받는다.
+      strong { // 영향 받음
+        font-weight: 400;
+      }
+    }
+
+    .detail {
+      @include flexbox(start);
+      @include text-style(12, $secondary);
+
+      .star-rating-13 {
+        margin-right: 4px;
+      }
+
+      time::after {
+        content: '·';
+      }
+    }
+  }
+  
+  &-body {
+    margin-bottom: 20px;
+
+    p {
+      @include text-style(13, $primary);
+    }
+  }
+
+  &-footer {
+    @include flexbox(start);
+
+    button {
+      width: 120px;
+      margin-right: 8px;
+    }
+
+    p {
+      @include text-style(12, $primary);
+      
+      strong {
+        font-weight: 400;
+
+        span {
+          font-weight: 700;
+          color: $dark;
+        }
+      }
+    }
+  }
+
+  @include responsive(T) {
+    padding: 40px 0 32px 40px;
+    
+    &-header {
+      margin-left: -32px;
+    }
+
+    &-body {
+      p {
+        @include text-style(14);
+      }
+    }
+  }
+
+  @include responsive(D) {
+    &-header {
+      .avatar-24,
+      .username {
+        &:hover {
+          opacity: 0.4;
+        }
+      }
+    }
+  }
+}
