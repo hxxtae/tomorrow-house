@@ -7,6 +7,20 @@
   .product-item {
     width: calc(50% - 10px); // (100% - 20px) / 2 ★★★ flex-wrap 인데 일정한 간격을 띄워야 할 때
 
+    a {
+      display: block;
+
+      &:active {
+        img {
+          transform: scale(1.1);
+        }
+
+        .product-card-title {
+          opacity: 0.5;
+        }
+      }
+    }
+
     &:nth-child(1),
     &:nth-child(2) {
       margin-bottom: 20px;
@@ -24,6 +38,18 @@
 
       &:last-child {
         display: none;
+      }
+    }
+  }
+
+  @include responsive(D) {
+    .product-item a:hover {
+      img {
+        transform: scale(1.1);
+      }
+
+      .product-card-title {
+        opacity: 0.5;
       }
     }
   }
