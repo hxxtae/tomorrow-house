@@ -33,7 +33,6 @@
   line-height: $line-height-24;
   letter-spacing: $letter-spacing-24;
 }
-
 @mixin text-style($size, $color: false) {
   @if($size == 12) {
     @include text-style-12;
@@ -54,12 +53,8 @@
     @include text-style-24;
   }
 
+  // validate check (유효성 검사)
   @if(type-of($color) == color) {
     color: $color;
   }
-}
-
-// test
-p {
-  @include text-style(16, $secondary);
 }

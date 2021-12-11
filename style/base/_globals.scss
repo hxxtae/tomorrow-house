@@ -45,6 +45,6 @@
 
 .lg-hidden {
   @media screen and (min-width: $lg-breakpoint) {
-    display: nonw !important;
+    display: none !important;
   }
 }

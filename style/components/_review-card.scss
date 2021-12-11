@@ -17,8 +17,8 @@
     }
 
     .username {
-      @include text-style(13, $primary); // ★★★ inline 안에 inline은 부모 text-style의 영향을 받는다.
-      strong { // 영향 받음
+      @include text-style(13, $primary);
+      strong {
         font-weight: 400;
       }
     }

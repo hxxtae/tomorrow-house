@@ -20,6 +20,7 @@
   background-color: $blue;
   transition: background-color 200ms ease-in-out;
 
+  // NOTE : Button states
   &:not(:disabled):hover { // disabled 가 아닌 상태에서 hover
     background-color: $blue-dark;
   }

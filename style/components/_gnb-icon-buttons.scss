@@ -44,7 +44,7 @@
     color: $white;
     border-radius: $badge-size / 2;
     background-color: $red;
-    text-align: center;  // ★★★ text 가로 정렬
+    text-align: center;  // ★★★ text 가운데 정렬
   }
 
   @include responsive(T) {
