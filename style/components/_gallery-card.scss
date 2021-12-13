@@ -19,7 +19,7 @@
   }
 
   &-detail {
-    @include flexbox(start);
+    @include flexbox(between);
     @include text-style(16, $white);
     position: absolute;
     bottom: 0;
@@ -28,6 +28,15 @@
     height: 54px;
     padding: 0 16px;
     background-color: rgba($black, 0.4);
+
+    .user-info {
+      @include flexbox(start);
+      overflow: hidden;
+
+      &:active {
+        opacity: 0.4;
+      }
+    }
 
     .avatar-32,
     .order {
@@ -45,9 +54,21 @@
 
     .username {
       @include truncate;
-      flex-grow: 1;
-      padding-right: 8px;
       font-weight: 700;
+    }
+
+    .order {
+      padding-left: 8px;
+    }
+  }
+
+  @include responsive(D) {
+    &-detail {
+      .user-info {
+        &:hover {
+          opacity: 0.4;
+        }
+      }
     }
   }
 }
