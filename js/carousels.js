@@ -1,41 +1,39 @@
+const commonOptions = {
+  navAsThumbnails: true,
+  arrowKeys: true,
+  mouseDrag: true,
+  preventScrollOnTouch: true,
+};
+
 const productCarousel = tns({
+  ...commonOptions,
   container: '.product-carousel .slider-list',
   controls: false, /* prev next */
   navContainer: '.product-carousel .thumbnail-list',
-  navAsThumbnails: true,
-  arrowKeys: true,
   //autoplay: true,
   autoplayHoverPause: true,
   autoplayButtonOutput: false,
-  mouseDrag: true,
-  preventScrollOnTouch: true,
 });
 
 const userGalleryMobile = tns({
+  ...commonOptions,
   container: '.user-gallery.is-mobile .slider-list',
   controls: false,
   navContainer: '.user-gallery.is-mobile .thumbnail-list',
-  navAsThumbnails: true,
   gutter: 4,
   edgePadding: 16,
   loop: false,
-  arrowKeys: true,
-  mouseDrag: true,
-  preventScrollOnTouch: true,
 });
 
 const userGalleryDesktop = tns({
+  ...commonOptions,
   container: '.user-gallery.is-desktop .slider-list',
   controls: true,
   controlsContainer: '.user-gallery.is-desktop .user-gallery-controls',
   navContainer: '.user-gallery.is-desktop .thumbnail-list',
-  navAsThumbnails: true,
   gutter: 6,
   edgePadding: 75,
   loop: false,
-  arrowKeys: true,
-  mouseDrag: true,
-  preventScrollOnTouch: true,
   // responsive: {
   //   768: {
   //     gutter: 6,
